@@ -1,1 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ソムリエログ プライバシーポリシー</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --wine-deep: #2C0A14;
+      --wine-mid: #5C1A2A;
+      --wine-rose: #A0394E;
+      --wine-blush: #C8707F;
+      --gold: #C9A96E;
+      --gold-light: #E8D5A3;
+      --cream: #F8F2E8;
+      --warm-white: #FDFAF5;
+      --text-dark: #1A0A0F;
+      --text-mid: #4A2830;
+      --text-light: #7A5A62;
+    }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Serif JP', serif;
+      background-color: var(--warm-white);
+      color: var(--text-dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(160deg, var(--wine-deep) 0%, var(--wine-mid) 60%, var(--wine-rose) 100%);
+      padding: 60px 24px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -40px; left: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(201, 169, 110, 0.08);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -30px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(201, 169, 110, 0.05);
+      pointer-events: none;
+    }
+
+    .header-ornament {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      opacity: 0.9;
+    }
+
+    header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .header-subtitle {
+      font-size: 11px;
+      color: var(--gold-light);
+      letter-spacing: 0.2em;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    .header-divider {
+      width: 48px; height: 1px;
+      background: var(--gold);
+      margin: 20px auto;
+      opacity: 0.6;
+    }
+
+    .header-desc {
+      font-size: 13px;
+      color: rgba(248, 242, 232, 0.82);
+      max-width: 340px;
+      margin: 0 auto;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    /* Main */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* Intro */
+    .intro-block {
+      margin-top: 32px;
+      padding: 22px 20px;
+      background: linear-gradient(135deg, rgba(44,10,20,0.04) 0%, rgba(201,169,110,0.06) 100%);
+      border-radius: 12px;
+      border-left: 3px solid var(--wine-rose);
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .intro-block p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+    /* Policy Sections */
+    .policy-section {
+      margin-top: 36px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .policy-section:nth-child(2)  { animation-delay: 0.08s; }
+    .policy-section:nth-child(3)  { animation-delay: 0.12s; }
+    .policy-section:nth-child(4)  { animation-delay: 0.16s; }
+    .policy-section:nth-child(5)  { animation-delay: 0.20s; }
+    .policy-section:nth-child(6)  { animation-delay: 0.24s; }
+    .policy-section:nth-child(7)  { animation-delay: 0.28s; }
+    .policy-section:nth-child(8)  { animation-delay: 0.32s; }
+    .policy-section:nth-child(9)  { animation-delay: 0.36s; }
+    .policy-section:nth-child(10) { animation-delay: 0.40s; }
+    .policy-section:nth-child(11) { animation-delay: 0.44s; }
+    .policy-section:nth-child(12) { animation-delay: 0.48s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 20px;
+      background: linear-gradient(to bottom, var(--wine-rose), var(--gold));
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .section-label h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--wine-mid);
+      letter-spacing: 0.05em;
+    }
+
+    .section-card {
+      background: var(--cream);
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+
+    .policy-text {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.95;
+    }
+
+    /* Sub-section */
+    .sub-section {
+      margin-top: 16px;
+    }
+
+    .sub-section:first-child {
+      margin-top: 0;
+    }
+
+    .sub-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--wine-rose);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sub-title::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .sub-divider {
+      border: none;
+      border-top: 1px solid rgba(201, 169, 110, 0.2);
+      margin: 16px 0;
+    }
+
+    /* List */
+    .policy-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .policy-list li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 9px;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .note-text {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: var(--text-light);
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    /* Contact */
+    .contact-info {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--wine-mid), var(--wine-rose));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+
+    .contact-value {
+      font-size: 13.5px;
+      color: var(--text-dark);
+    }
+
+    .contact-value a {
+      color: var(--wine-rose);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(160, 57, 78, 0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-value a:hover { border-color: var(--wine-rose); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 20px 40px;
+      border-top: 1px solid rgba(201, 169, 110, 0.2);
+      margin-top: 48px;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--wine-mid);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .footer-meta { font-size: 11px; color: var(--text-light); letter-spacing: 0.05em; }
+    .footer-update { margin-top: 6px; font-size: 11px; color: var(--gold); letter-spacing: 0.08em; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="header-ornament">Privacy Policy</p>
+    <h1>プライバシーポリシー</h1>
+    <p class="header-subtitle">Sommelier Log</p>
+    <div class="header-divider"></div>
+    <p class="header-desc">山本憲吾は、ソムリエログにおける利用者情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
+  </header>
+
+  <main>
+
+    <!-- 1. 取得する情報 -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>1. 取得する情報</h2>
+      </div>
+      <div class="section-card">
+        <div class="sub-section">
+          <p class="sub-title">1-1. 利用者が入力する情報</p>
+          <p class="policy-text" style="margin-bottom:10px;">本アプリでは、利用者が任意で以下の情報を入力・保存できます。</p>
+          <ul class="policy-list">
+            <li>記録日</li>
+            <li>ワインタイプ</li>
+            <li>ワイン名</li>
+            <li>生産者</li>
+            <li>ヴィンテージ</li>
+            <li>生産国</li>
+            <li>品種</li>
+            <li>メモ</li>
+            <li>テイスティング記録の内容</li>
+            <li>写真</li>
+          </ul>
+        </div>
+        <hr class="sub-divider">
+        <div class="sub-section">
+          <p class="sub-title">1-2. 端末内で扱われる情報</p>
+          <p class="policy-text">本アプリでは、写真追加機能等の提供のため、端末の写真ライブラリまたはカメラ機能にアクセスする場合があります。</p>
+          <p class="note-text">これらの情報は、利用者の操作に基づいてのみ利用されます。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 情報の利用目的 -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>2. 情報の利用目的</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text" style="margin-bottom:10px;">取得した情報は、以下の目的で利用します。</p>
+        <ul class="policy-list">
+          <li>本アプリの基本機能の提供</li>
+          <li>テイスティング記録の保存、表示、編集</li>
+          <li>写真付き記録機能の提供</li>
+          <li>利用者からのお問い合わせへの対応</li>
+          <li>不具合調査、品質改善、機能改善のため</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. 情報の保存について -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>3. 情報の保存について</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text">本アプリに入力された情報は、原則として利用者の端末内または本アプリで利用する保存領域に保存されます。</p>
+        <p class="note-text">保存方法や保存先は、今後の機能変更に伴い見直される場合があります。</p>
+      </div>
+    </div>
+
+    <!-- 4. 第三者提供 -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>4. 第三者提供</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text">当方は、法令に基づく場合を除き、利用者の同意なく個人情報を第三者に提供しません。</p>
+      </div>
+    </div>
+
+    <!-- 5. 外部サービスの利用 -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>5. 外部サービスの利用</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text">本アプリでは、今後、クラッシュ解析、利便性向上、運用改善等のために外部サービスを利用する場合があります。</p>
+        <p class="note-text">その場合は、本ポリシーまたはアプリ内の表示等にて適切に案内します。</p>
+      </div>
+    </div>
+
+    <!-- 6. 写真・カメラ・フォトライブラリについて -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>6. 写真・カメラ・フォトライブラリについて</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text">本アプリは、利用者が記録に写真を追加する場合に限り、カメラまたはフォトライブラリへのアクセスを求めることがあります。</p>
+        <p class="note-text">これらは記録機能を提供するためにのみ利用されます。</p>
+      </div>
+    </div>
+
+    <!-- 7. 未成年の利用について -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>7. 未成年の利用について</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text">未成年の方が本アプリを利用する場合は、必要に応じて保護者の同意を得たうえでご利用ください。</p>
+      </div>
+    </div>
+
+    <!-- 8. 安全管理 -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>8. 安全管理</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text">当方は、取得した情報について、漏えい、滅失、毀損等の防止に努め、合理的な範囲で安全管理措置を講じます。</p>
+      </div>
+    </div>
+
+    <!-- 9. 利用者による情報の確認・削除 -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>9. 利用者による情報の確認・削除</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text">利用者は、本アプリ内で保存した記録について、編集または削除が可能です。</p>
+        <p class="note-text">お問い合わせが必要な場合は、下記窓口までご連絡ください。</p>
+      </div>
+    </div>
+
+    <!-- 10. プライバシーポリシーの変更 -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>10. プライバシーポリシーの変更</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text">当方は、必要に応じて本ポリシーを変更することがあります。</p>
+        <p class="note-text">重要な変更がある場合は、本ページまたは本アプリ内で告知します。</p>
+      </div>
+    </div>
+
+    <!-- 11. お問い合わせ窓口 -->
+    <div class="policy-section">
+      <div class="section-label">
+        <h2>11. お問い合わせ窓口</h2>
+      </div>
+      <div class="section-card">
+        <p class="policy-text">本ポリシーに関するお問い合わせは、以下までお願いいたします。</p>
+        <div class="contact-info">
+          <div class="contact-row">
+            <div class="contact-icon">👤</div>
+            <div>
+              <p class="contact-label">運営者名</p>
+              <p class="contact-value">山本憲吾</p>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <p class="contact-label">メールアドレス</p>
+              <p class="contact-value"><a href="mailto:yamayamak40@gmail.com">yamayamak40@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p class="footer-logo">Sommelier Log</p>
+    <p class="footer-meta">ソムリエログ プライバシーポリシー</p>
+    <p class="footer-update">最終更新日：2026年04月27日</p>
+  </footer>
+
+</body>
+</html>

@@ -1,1 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ソムリエログ サポート</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --wine-deep: #2C0A14;
+      --wine-mid: #5C1A2A;
+      --wine-rose: #A0394E;
+      --wine-blush: #C8707F;
+      --gold: #C9A96E;
+      --gold-light: #E8D5A3;
+      --cream: #F8F2E8;
+      --warm-white: #FDFAF5;
+      --text-dark: #1A0A0F;
+      --text-mid: #4A2830;
+      --text-light: #7A5A62;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Serif JP', serif;
+      background-color: var(--warm-white);
+      color: var(--text-dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(160deg, var(--wine-deep) 0%, var(--wine-mid) 60%, var(--wine-rose) 100%);
+      padding: 60px 24px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(201, 169, 110, 0.08);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -30px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(201, 169, 110, 0.05);
+      pointer-events: none;
+    }
+
+    .header-ornament {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      opacity: 0.9;
+    }
+
+    header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .header-subtitle {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 11px;
+      color: var(--gold-light);
+      letter-spacing: 0.2em;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    .header-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 20px auto;
+      opacity: 0.6;
+    }
+
+    .header-desc {
+      font-size: 13px;
+      color: rgba(248, 242, 232, 0.82);
+      max-width: 320px;
+      margin: 0 auto;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    /* Main */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* Section */
+    section {
+      margin-top: 44px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.3s; }
+    section:nth-child(4) { animation-delay: 0.4s; }
+    section:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 22px;
+      background: linear-gradient(to bottom, var(--wine-rose), var(--gold));
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .section-label h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--wine-mid);
+      letter-spacing: 0.05em;
+    }
+
+    .section-card {
+      background: var(--cream);
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      border-radius: 12px;
+      padding: 24px 22px;
+    }
+
+    /* App features */
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .feature-list li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 10px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .notice-text {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(201, 169, 110, 0.2);
+      font-size: 12px;
+      color: var(--text-light);
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--warm-white);
+      border: 1px solid rgba(92, 26, 42, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 16px 18px;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .faq-q-badge {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--wine-rose);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .faq-q-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      font-weight: 500;
+      flex: 1;
+      line-height: 1.6;
+    }
+
+    .faq-chevron {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 4px;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 18px 0 38px;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px;
+      padding: 0 18px 16px 38px;
+    }
+
+    .faq-a-text {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      border-left: 2px solid rgba(201, 169, 110, 0.4);
+      padding-left: 12px;
+    }
+
+    /* Contact */
+    .contact-body {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+    .contact-info {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--wine-mid), var(--wine-rose));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+
+    .contact-value {
+      font-size: 13.5px;
+      color: var(--text-dark);
+    }
+
+    .contact-value a {
+      color: var(--wine-rose);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(160, 57, 78, 0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-value a:hover {
+      border-color: var(--wine-rose);
+    }
+
+    /* Disclaimer */
+    .disclaimer-text {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.9;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 20px 40px;
+      border-top: 1px solid rgba(201, 169, 110, 0.2);
+      margin-top: 48px;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--wine-mid);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .footer-meta {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-update {
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+
+    /* Intro block */
+    .intro-block {
+      margin-top: 32px;
+      padding: 22px 20px;
+      background: linear-gradient(135deg, rgba(44, 10, 20, 0.04) 0%, rgba(201, 169, 110, 0.06) 100%);
+      border-radius: 12px;
+      border-left: 3px solid var(--wine-rose);
+    }
+
+    .intro-block p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="header-ornament">Support Page</p>
+    <h1>ソムリエログ</h1>
+    <p class="header-subtitle">Sommelier Log — Tasting Note App</p>
+    <div class="header-divider"></div>
+    <p class="header-desc">ソムリエログをご利用いただきありがとうございます。本ページでは、アプリに関するお問い合わせ先や、サポートに関する情報をご案内します。</p>
+  </header>
+
+  <main>
+
+    <div class="intro-block">
+      <p>本アプリは、JSAソムリエ2次試験の答案形式を参考に、ワインのテイスティング記録を整理・保存できるアプリです。</p>
+    </div>
+
+    <!-- アプリについて -->
+    <section>
+      <div class="section-label">
+        <h2>アプリについて</h2>
+      </div>
+      <div class="section-card">
+        <ul class="feature-list">
+          <li>記録日、ワインタイプ、ワイン名、生産者、ヴィンテージ、品種などの基本情報の保存</li>
+          <li>外観、香り、味わい、結論の流れに沿ったテイスティング記録</li>
+          <li>写真付きでの記録保存</li>
+          <li>一覧・詳細画面での見返し</li>
+          <li>一部項目の追加</li>
+        </ul>
+        <p class="notice-text">本アプリは、JSAソムリエ2次試験の形式を参考にしていますが、JSA公式アプリではありません。</p>
+      </div>
+    </section>
+
+    <!-- よくあるお問い合わせ -->
+    <section>
+      <div class="section-label">
+        <h2>よくあるお問い合わせ</h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-badge">Q</span>
+            <span class="faq-q-text">記録した内容はあとから編集できますか？</span>
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-a">
+            <p class="faq-a-text">はい。保存済みの記録は編集・削除が可能です。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-badge">Q</span>
+            <span class="faq-q-text">写真は保存できますか？</span>
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-a">
+            <p class="faq-a-text">はい。記録に写真を追加できます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-badge">Q</span>
+            <span class="faq-q-text">一部の選択肢を追加したいです。</span>
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-a">
+            <p class="faq-a-text">設定画面から追加できる項目については、任意で追加可能です。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="faq-q-badge">Q</span>
+            <span class="faq-q-text">このアプリは試験の採点をしてくれますか？</span>
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-a">
+            <p class="faq-a-text">いいえ。本アプリは採点や正誤判定を行うものではなく、JSA形式でテイスティング記録を残すためのアプリです。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section>
+      <div class="section-label">
+        <h2>お問い合わせ</h2>
+      </div>
+      <div class="section-card">
+        <p class="contact-body">不具合のご報告、ご要望、その他のお問い合わせは、以下までご連絡ください。</p>
+        <div class="contact-info">
+          <div class="contact-row">
+            <div class="contact-icon">👤</div>
+            <div>
+              <p class="contact-label">運営者名</p>
+              <p class="contact-value">山本憲吾</p>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <p class="contact-label">メールアドレス</p>
+              <p class="contact-value"><a href="mailto:yamayamak40@gmail.com">yamayamak40@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 免責事項 -->
+    <section>
+      <div class="section-label">
+        <h2>免責事項</h2>
+      </div>
+      <div class="section-card">
+        <p class="disclaimer-text">本アプリは、ワインのテイスティング記録を補助することを目的としたアプリです。入力内容の正確性、学習成果、試験結果等を保証するものではありません。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="footer-logo">Sommelier Log</p>
+    <p class="footer-meta">ソムリエログ サポートページ</p>
+    <p class="footer-update">最終更新日：2026年04月27日</p>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>
